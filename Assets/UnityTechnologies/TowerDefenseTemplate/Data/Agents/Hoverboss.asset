@@ -3,23 +3,16 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 910bcb715cd3344619df786cb0658efb, type: 3}
   m_Name: Hoverboss
   m_EditorClassIdentifier: 
-  agentName: Hoverboss
-  agentDescription: Boss
+  agentName: "\u0425\u043E\u0432\u0435\u0440-\u0431\u043E\u0441\u0441"
+  agentDescription: "\u0411\u043E\u0441\u0441"
   agentPrefab: {fileID: 114808550217567290, guid: 0dba493688cc24e6ebe9988434057079,
-    type: 2}
-  agentData:
-    projectile: {fileID: 1797349743178286, guid: efcfdd276fd9a4bce9c848912a90dc0b,
-      type: 2}
-    moveSpeed: 1.2
-    maxHealth: 600
-    damage: 2
-    fireRate: 1
-    searchRate: 1
+    type: 3}
