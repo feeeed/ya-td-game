@@ -6,6 +6,7 @@ using TowerDefense.Level;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using YG;
 
 namespace TowerDefense.UI
 {
@@ -95,6 +96,7 @@ namespace TowerDefense.UI
 		/// </summary>
 		public void RestartLevel()
 		{
+			YandexGame.FullscreenShow();
 			SafelyUnsubscribe();
 			string currentSceneName = SceneManager.GetActiveScene().name;
 			SceneManager.LoadScene(currentSceneName);
