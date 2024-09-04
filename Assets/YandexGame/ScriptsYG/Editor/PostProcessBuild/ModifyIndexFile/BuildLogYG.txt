@@ -1,2 +1,2 @@
-Build path: /home/mynt/builds/tmpbu2v
-Build number: 2
+Build path: /home/mynt/builds/test2
+Build number: 3
