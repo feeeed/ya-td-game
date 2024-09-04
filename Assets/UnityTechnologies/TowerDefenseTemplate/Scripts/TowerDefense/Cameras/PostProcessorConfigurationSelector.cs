@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
-using UnityEngine.PostProcessing;
+//using UnityEngine.PostProcessing;
 
 namespace TowerDefense.Cameras
 {
 	/// <summary>
 	/// Simple component to select lower quality post processing configurations on mobile
 	/// </summary>
-	[RequireComponent(typeof(PostProcessingBehaviour))]
+	//[RequireComponent(typeof(PostProcessingBehaviour))]
 	public class PostProcessorConfigurationSelector : MonoBehaviour
 	{
+		/*
 		public PostProcessingProfile highQualityProfile;
 		
 		public PostProcessingProfile lowQualityProfile;
@@ -26,6 +27,6 @@ namespace TowerDefense.Cameras
 #endif
 
 			attachedPostProcessor.profile = selectedProfile;
-		}
+		}*/
 	}
 }
