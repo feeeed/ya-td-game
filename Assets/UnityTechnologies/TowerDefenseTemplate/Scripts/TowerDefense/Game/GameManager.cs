@@ -2,6 +2,7 @@
 using Core.Game;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using YG;
 
 namespace TowerDefense.Game
 {
@@ -39,6 +40,7 @@ namespace TowerDefense.Game
 			}
 
 			m_DataStore.CompleteLevel(levelId, starsEarned);
+			YandexGame.FullscreenShow();
 			SaveData();
 		}
 
