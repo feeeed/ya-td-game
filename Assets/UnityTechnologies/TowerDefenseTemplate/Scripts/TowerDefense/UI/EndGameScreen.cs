@@ -86,6 +86,7 @@ namespace TowerDefense.UI
 		/// </summary>
 		public void GoToMainMenu()
 		{
+			YandexGame.FullscreenShow();
 			SafelyUnsubscribe();
 			SceneManager.LoadScene(menuSceneName);
 		}
@@ -108,6 +109,7 @@ namespace TowerDefense.UI
 		/// </summary>
 		public void GoToNextLevel()
 		{
+			YandexGame.FullscreenShow();
 			SafelyUnsubscribe();
 			if (!GameManager.instanceExists)
 			{

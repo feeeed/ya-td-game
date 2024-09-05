@@ -6,6 +6,7 @@ using UnityEngine;
 #if !NETFX_CORE
 namespace Core.Data
 {
+	/*
 	/// <summary>
 	/// Encryption extension to Json Saver
 	/// </summary>
@@ -92,6 +93,6 @@ namespace Core.Data
 
 			return new StreamReader(encryptedStream);
 		}
-	}
+	}*/
 }
 #endif

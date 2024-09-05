@@ -115,11 +115,11 @@ namespace Core.Data
 		protected void LoadData()
 		{
 			// If it is in Unity Editor use the standard JSON (human readable for debugging) otherwise encrypt it for deployed version
-#if UNITY_EDITOR
+//#if UNITY_EDITOR
 			m_DataSaver = new JsonSaver<TDataStore>(k_SavedGameFile);
-#else
-			m_DataSaver = new EncryptedJsonSaver<TDataStore>(k_SavedGameFile);
-#endif
+//#else
+//			m_DataSaver = new EncryptedJsonSaver<TDataStore>(k_SavedGameFile);
+//#endif
 
 			try
 			{

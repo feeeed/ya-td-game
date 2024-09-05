@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using YG;
 
 namespace TowerDefense.UI
 {
@@ -27,6 +28,7 @@ namespace TowerDefense.UI
 		/// </summary>
 		public void RestartCurrentScene()
 		{
+			YandexGame.FullscreenShow();
 			Scene activeScene = SceneManager.GetActiveScene();
 			SceneManager.LoadScene(activeScene.name);
 		}

@@ -17,11 +17,28 @@ namespace TowerDefense.Game
 		/// </summary>
 		public LevelList levelList;
 
+		void OnApplicationFocus(bool hasFocus)
+		{
+			Silence(!hasFocus);
+		}
+
+		void OnApplicationPause(bool isPaused)
+		{
+			Silence(isPaused);
+		}
+
+		private void Silence(bool silence)
+		{
+			AudioListener.pause = silence;
+			AudioListener.volume = silence ? 0 : 1;
+		}
+
 		/// <summary>
 		/// Set sleep timeout to never sleep
 		/// </summary>
 		protected override void Awake()
 		{
+			Application.runInBackground = false;
 			Screen.sleepTimeout = SleepTimeout.NeverSleep;
 			base.Awake();
 		}
@@ -40,7 +57,6 @@ namespace TowerDefense.Game
 			}
 
 			m_DataStore.CompleteLevel(levelId, starsEarned);
-			YandexGame.FullscreenShow();
 			SaveData();
 		}
 

@@ -1450,9 +1450,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 114433171440389212}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: LoadScene
+      - m_Target: {fileID: 114978130756391370}
+        m_TargetAssemblyTypeName: TowerDefense.UI.PauseMenu, Assembly-CSharp
+        m_MethodName: LoadToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

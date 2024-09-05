@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e2352be0954e359a850a9d99215c6e, type: 3}
   m_Name: SuperTower
   m_EditorClassIdentifier: 
-  description: "\u0421\u0430\u043C\u043E\u0443\u043D\u0438\u0447\u0442\u043E\u0436\u0430\u0435\u0442\u0441\u044F
+  description: "<b>\u0421\u0430\u043C\u043E\u0443\u043D\u0438\u0447\u0442\u043E\u0436\u0430\u0435\u0442\u0441\u044F</b>
     \u043F\u043E\u0441\u043B\u0435 \u0437\u0430\u043F\u0443\u0441\u043A\u0430 \u0440\u0430\u043A\u0435\u0442\u043D\u043E\u0433\u043E
     \u0437\u0430\u043B\u043F\u0430"
   upgradeDescription: 

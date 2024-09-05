@@ -2,7 +2,9 @@
 using TowerDefense.Game;
 using TowerDefense.UI.HUD;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using YG;
 using GameUIState = TowerDefense.UI.HUD.GameUI.State;
 
 namespace TowerDefense.UI
@@ -100,6 +102,12 @@ namespace TowerDefense.UI
 			{
 				ClosePauseMenu();
 			}
+		}
+
+		public void LoadToMainMenu()
+		{
+			YandexGame.FullscreenShow();
+			SceneManager.LoadScene("MainMenu");
 		}
 
 		/// <summary>

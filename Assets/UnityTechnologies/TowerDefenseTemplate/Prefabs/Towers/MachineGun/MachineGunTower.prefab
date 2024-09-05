@@ -122,7 +122,7 @@ MonoBehaviour:
   - {fileID: 114779466188146336, guid: 639c49a7820a549c5822f7b768abc5ac, type: 3}
   - {fileID: 114056922861069036, guid: 03d62e936397d4314864ca45f89016b9, type: 3}
   - {fileID: 114683032773000130, guid: 4c8e6569a85a64ba4b2c7687a7fa0a04, type: 3}
-  towerName: "\u0428\u0442\u0443\u0440\u043C\u043E\u0432\u0430\u044F \u043F\u0443\u0448\u043A\u0430"
+  towerName: "\u041F\u0443\u043B\u0435\u043C\u0451\u0442"
   dimensions:
     x: 2
     y: 2

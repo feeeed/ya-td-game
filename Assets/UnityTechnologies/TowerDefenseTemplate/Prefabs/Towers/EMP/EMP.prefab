@@ -512,7 +512,7 @@ MonoBehaviour:
   - {fileID: 114572677471174774, guid: ec315e78452fd456db9e789f88989b97, type: 3}
   - {fileID: 114572677471174774, guid: c9e418a92827544b2a387ff2938291ec, type: 3}
   - {fileID: 114572677471174774, guid: d8faacfa67b8d4af8b5a81028390f02b, type: 3}
-  towerName: "\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440 \u042D\u041C\u0418"
+  towerName: "\u042D\u041C\u0418"
   dimensions:
     x: 2
     y: 2

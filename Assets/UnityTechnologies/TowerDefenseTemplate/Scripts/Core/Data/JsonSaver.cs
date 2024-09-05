@@ -20,9 +20,10 @@ namespace Core.Data
 		{
 			string json = JsonUtility.ToJson(data);
 
-			using (StreamWriter writer = GetWriteStream())
+			//using (StreamWriter writer = GetWriteStream())
 			{
-				writer.Write(json);
+				//writer.Write(json);
+				PlayerPrefs.SetString(m_Filename, json);
 			}
 		}
 
@@ -31,15 +32,18 @@ namespace Core.Data
 		/// </summary>
 		public override bool Load(out T data)
 		{
-			if (!File.Exists(m_Filename))
+			//if (!File.Exists(m_Filename))
+			if (!PlayerPrefs.HasKey(m_Filename))
 			{
 				data = default(T);
 				return false;
 			}
 
-			using (StreamReader reader = GetReadStream())
+			//using (StreamReader reader = GetReadStream())
 			{
-				data = JsonUtility.FromJson<T>(reader.ReadToEnd());
+				//data = JsonUtility.FromJson<T>(reader.ReadToEnd());
+
+				data = JsonUtility.FromJson<T>(PlayerPrefs.GetString(m_Filename));
 			}
 
 			return true;

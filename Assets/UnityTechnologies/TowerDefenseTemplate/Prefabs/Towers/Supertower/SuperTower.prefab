@@ -87,7 +87,7 @@ MonoBehaviour:
   targetTransform: {fileID: 0}
   levels:
   - {fileID: 114210254157198064, guid: 06f0112fbf82244059dd2f2738a29a93, type: 3}
-  towerName: "\u0420\u0430\u043A\u0435\u0442\u043D\u044B\u0439 \u0437\u0430\u043B\u043F"
+  towerName: "\u0410\u043D\u043D\u0438\u0433\u0438\u043B\u044F\u0442\u043E\u0440"
   dimensions:
     x: 3
     y: 3

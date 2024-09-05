@@ -204,7 +204,7 @@ MonoBehaviour:
   - {fileID: 114381954249791234, guid: 6f6de38bc4946428ab2a1d468039753e, type: 3}
   - {fileID: 114945165262750342, guid: b75eb6f554ae040cbaaf7df021b2ce06, type: 3}
   - {fileID: 114893434427387590, guid: 44a5e9d3e0fb149659199dc573e7b5a4, type: 3}
-  towerName: "\u041F\u043B\u0430\u0437\u043C\u043E\u0432\u043E\u0435 \u043A\u043E\u043F\u044C\u0435"
+  towerName: "\u0420\u0435\u043B\u044C\u0441\u043E\u0442\u0440\u043E\u043D"
   dimensions:
     x: 2
     y: 2

@@ -23,22 +23,24 @@ namespace Core.Data
 
 		public void Delete()
 		{
-			File.Delete(m_Filename);
+			PlayerPrefs.DeleteAll();
+			//File.Delete(m_Filename);
 		}
 
 		public static string GetFinalSaveFilename(string baseFilename)
 		{
-			return string.Format("{0}/{1}", Application.persistentDataPath, baseFilename);
+			return baseFilename;
+			//return string.Format("{0}/{1}", Application.persistentDataPath, baseFilename);
 		}
-
+/*
 		protected virtual StreamWriter GetWriteStream()
 		{
-			return new StreamWriter(new FileStream(m_Filename, FileMode.Create));
+			//return new StreamWriter(new FileStream(m_Filename, FileMode.Create));
 		}
 
 		protected virtual StreamReader GetReadStream()
 		{
-			return new StreamReader(new FileStream(m_Filename, FileMode.Open));
-		}
+			//return new StreamReader(new FileStream(m_Filename, FileMode.Open));
+		}*/
 	}
 }
