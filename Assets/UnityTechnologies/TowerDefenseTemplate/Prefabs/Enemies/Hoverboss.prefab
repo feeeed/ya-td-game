@@ -9803,7 +9803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fedeb0b3c5e104ea19d0d4599d22ab97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 5
   chanceToSpawnCollisionPrefab: 1
   collisionParticles: {fileID: 0}
   alignment:
