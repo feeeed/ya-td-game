@@ -17,7 +17,7 @@ MonoBehaviour:
   enDescription: Tier 1 - Slows nearby enemies
   upgradeDescription: 
   enUpgradeDescription: 
-  cost: 6
+  cost: 10
   sell: 3
   maxHealth: 5
   startingHealth: 5

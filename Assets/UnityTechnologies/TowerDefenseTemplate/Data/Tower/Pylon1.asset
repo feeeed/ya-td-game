@@ -17,7 +17,7 @@ MonoBehaviour:
   enDescription: Tier 1 - Generates energy
   upgradeDescription: 
   enUpgradeDescription: 
-  cost: 8
+  cost: 10
   sell: 4
   maxHealth: 5
   startingHealth: 5
