@@ -48,7 +48,7 @@ namespace TowerDefense.Level.Editor
 				//TempContent.text = index.ToString();
 				//GUI.Label(rect, TempContent);
 				EditorGUIUtility.labelWidth = 20;
-				TempContent.text = index.ToString();
+				TempContent.text = (index + 1).ToString();
 				rect.width = itemWidth;
 				EditorGUI.PropertyField(rect, prop.FindPropertyRelative("agentConfiguration"), TempContent);
 				//data.agentConfiguration = (AgentConfiguration)EditorGUI.ObjectField(rect, prop.FindPropertyRelative("agentConfiguration"), typeof(AgentConfiguration), false);
