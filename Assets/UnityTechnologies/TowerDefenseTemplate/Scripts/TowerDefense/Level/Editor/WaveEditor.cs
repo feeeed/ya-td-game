@@ -27,6 +27,11 @@ namespace TowerDefense.Level.Editor
 			wavesList = new ReorderableList(serializedObject, instructionsListProp);
 
 			var elementHeight = 18;
+			wavesList.drawHeaderCallback += (Rect rect) => 
+			{
+				TempContent.text = "Spawn Instructions";
+				EditorGUI.PrefixLabel(rect, TempContent);
+			};
 			wavesList.drawElementCallback += (Rect rect, int index, bool isActive, bool isFocused) =>
 			{
 				var prop = instructionsListProp.GetArrayElementAtIndex(index);
@@ -62,13 +67,16 @@ namespace TowerDefense.Level.Editor
 			{
 				return;
 			}
+
 			serializedObject.Update();
-			EditorGUI.BeginChangeCheck();
-			wavesList.DoLayoutList();
-			if (EditorGUI.EndChangeCheck())
+			if (m_Wave is TimedWave)
 			{
-				serializedObject.ApplyModifiedProperties();
+				EditorGUILayout.PropertyField(serializedObject.FindProperty("timeToNextWave"));
 			}
+			
+			wavesList.DoLayoutList();
+
+			serializedObject.ApplyModifiedProperties();
 			
 			// Count spawn instructions
 			float lastSpawnTime = spawnInstructions.Sum(t => t.delayToSpawn);
