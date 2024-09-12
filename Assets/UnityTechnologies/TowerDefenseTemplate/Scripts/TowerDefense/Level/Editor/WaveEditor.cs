@@ -34,6 +34,8 @@ namespace TowerDefense.Level.Editor
 			};
 			wavesList.drawElementCallback += (Rect rect, int index, bool isActive, bool isFocused) =>
 			{
+				if (index >= instructionsListProp.arraySize)
+					return;
 				var prop = instructionsListProp.GetArrayElementAtIndex(index);
 				var data = m_Wave.spawnInstructions[index];
 				var labelWidth = EditorGUIUtility.labelWidth;
