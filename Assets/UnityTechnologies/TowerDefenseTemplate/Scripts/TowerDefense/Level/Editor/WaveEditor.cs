@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using TowerDefense.Agents.Data;
+using TowerDefense.Economy;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
@@ -80,6 +81,12 @@ namespace TowerDefense.Level.Editor
 			wavesList.elementHeight = elementHeight;
 		}
 
+		class InstructionConfigSummary
+		{
+			public int count;
+			public int totalLoot;
+		}
+
 		public override void OnInspectorGUI()
 		{
 			//base.OnInspectorGUI();
@@ -105,19 +112,38 @@ namespace TowerDefense.Level.Editor
 			float lastSpawnTime = spawnInstructions.Sum(t => t.delayToSpawn);
 
 			// Group by enemy type so we can count per type as well
-			var groups = spawnInstructions.GroupBy(t => t.agentConfiguration);
-			var groupCounts = groups.Select(g => new {Number = g.Count(), Item = g.Key.agentName});
+			//var groups = spawnInstructions.GroupBy(t => t.agentConfiguration);
+			//var groupCounts = groups.Select(g => new {Number = g.Count(), Item = g.Key.agentName});
+
+			Dictionary<AgentConfiguration, InstructionConfigSummary> instructionSummaryPerConfig = new();
+
+			var totalLootDropped = 0;
+			foreach (var instruction in spawnInstructions)
+			{
+				if (!instructionSummaryPerConfig.TryGetValue(instruction.agentConfiguration, out var summary))
+					instructionSummaryPerConfig.Add(instruction.agentConfiguration, summary = new());
+
+				var lootDropped = instruction.agentConfiguration.agentPrefab.GetComponent<LootDrop>().lootDropped;
+				summary.count++;
+				summary.totalLoot += lootDropped;
+				totalLootDropped += lootDropped;
+			}
 
 			EditorGUILayout.Space();
 			EditorGUILayout.LabelField("Wave summary");
 
+		
 			EditorGUILayout.LabelField(string.Format("Last spawn time: {0}", lastSpawnTime));
+			EditorGUILayout.LabelField(string.Format("Total loot dropped: {0}", totalLootDropped));
 			EditorGUILayout.Space();
-			foreach (var groupCount in groupCounts)
+
+			EditorGUIUtility.labelWidth = 80;
+			foreach (var x in instructionSummaryPerConfig)
 			{
 				EditorGUILayout.BeginHorizontal();
-				EditorGUILayout.LabelField(string.Format("Enemy:\t{0}", groupCount.Item));
-				EditorGUILayout.LabelField(string.Format("Count:\t{0}", groupCount.Number));
+				EditorGUILayout.LabelField(string.Format("Enemy:\t{0}", x.Key.name));
+				EditorGUILayout.LabelField(string.Format("Count:\t{0}", x.Value.count));
+				EditorGUILayout.LabelField(string.Format("Loot:\t{0}", x.Value.totalLoot));
 				EditorGUILayout.EndHorizontal();
 			}
 		}
