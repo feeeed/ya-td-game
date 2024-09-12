@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using TowerDefense.Agents.Data;
 using UnityEditor;
+using UnityEditorInternal;
+using UnityEngine;
 
 namespace TowerDefense.Level.Editor
 {
@@ -12,20 +15,59 @@ namespace TowerDefense.Level.Editor
 	{
 		Wave m_Wave;
 
+		ReorderableList wavesList;
+
+		static GUIContent TempContent = new GUIContent();
+
 		void OnEnable()
 		{
 			m_Wave = (Wave) target;
+
+			var instructionsListProp = serializedObject.FindProperty("spawnInstructions");
+			wavesList = new ReorderableList(serializedObject, instructionsListProp);
+
+			var elementHeight = 18;
+			wavesList.drawElementCallback += (Rect rect, int index, bool isActive, bool isFocused) =>
+			{
+				var prop = instructionsListProp.GetArrayElementAtIndex(index);
+				var data = m_Wave.spawnInstructions[index];
+
+				var itemWidth = rect.width / 3;
+				rect.height = elementHeight;
+				rect.width = itemWidth;
+				EditorGUI.PropertyField(rect, prop.FindPropertyRelative("agentConfiguration"), GUIContent.none);
+				//data.agentConfiguration = (AgentConfiguration)EditorGUI.ObjectField(rect, prop.FindPropertyRelative("agentConfiguration"), typeof(AgentConfiguration), false);
+				rect.x += itemWidth;
+				EditorGUI.PropertyField(rect, prop.FindPropertyRelative("startingNode"), GUIContent.none);
+				//data.startingNode = (Nodes.Node)EditorGUI.ObjectField(rect, data.startingNode, typeof(Nodes.Node), true);
+				rect.x += itemWidth;
+
+				var labelWidth = EditorGUIUtility.labelWidth;
+				EditorGUIUtility.labelWidth = 40;
+				TempContent.text = "Delay";
+				EditorGUI.PropertyField(rect, prop.FindPropertyRelative("delayToSpawn"), TempContent);
+				//data.delayToSpawn = EditorGUI.FloatField(rect, "Delay", data.delayToSpawn);
+				EditorGUIUtility.labelWidth = labelWidth;
+			};
+			wavesList.elementHeight = elementHeight;
 		}
 
 		public override void OnInspectorGUI()
 		{
-			base.OnInspectorGUI();
+			//base.OnInspectorGUI();
 
 			// Draw a summary of all spawn instructions
 			List<SpawnInstruction> spawnInstructions = m_Wave.spawnInstructions;
 			if (spawnInstructions == null)
 			{
 				return;
+			}
+			serializedObject.Update();
+			EditorGUI.BeginChangeCheck();
+			wavesList.DoLayoutList();
+			if (EditorGUI.EndChangeCheck())
+			{
+				serializedObject.ApplyModifiedProperties();
 			}
 			
 			// Count spawn instructions
