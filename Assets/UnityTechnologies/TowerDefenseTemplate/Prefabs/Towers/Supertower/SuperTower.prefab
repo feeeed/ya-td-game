@@ -88,6 +88,7 @@ MonoBehaviour:
   levels:
   - {fileID: 114210254157198064, guid: 06f0112fbf82244059dd2f2738a29a93, type: 3}
   towerName: "\u0410\u043D\u043D\u0438\u0433\u0438\u043B\u044F\u0442\u043E\u0440"
+  enTowerName: Annihilator
   dimensions:
     x: 3
     y: 3

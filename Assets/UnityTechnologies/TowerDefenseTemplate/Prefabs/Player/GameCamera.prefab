@@ -158,7 +158,7 @@ MonoBehaviour:
   dragThresholdMouse: 1
   tapTime: 0.2
   holdTime: 0.8
-  mouseWheelSensitivity: 1
+  mouseWheelSensitivity: 10
   trackMouseButtons: 2
   flickThreshold: 2
 --- !u!114 &114555595464069464

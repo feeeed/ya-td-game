@@ -69,6 +69,8 @@ namespace TowerDefense.UI
 		{
 			SetPauseMenuCanvas(true);
 
+			var isEn = GameManager.CurrLang == 1;
+
 			LevelItem level = GameManager.instance.GetLevelForCurrentScene();
 			if (level == null)
 			{
@@ -76,11 +78,11 @@ namespace TowerDefense.UI
 			}
 			if (titleText != null)
 			{
-				titleText.text = level.name;
+				titleText.text = isEn ? level.enName : level.name;
 			}
 			if (descriptionText != null)
 			{
-				descriptionText.text = level.description;
+				descriptionText.text = isEn ? level.enDescription : level.description;
 			}
 
 			m_State = State.Open;

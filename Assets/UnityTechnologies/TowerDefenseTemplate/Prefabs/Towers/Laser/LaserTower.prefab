@@ -205,6 +205,7 @@ MonoBehaviour:
   - {fileID: 114945165262750342, guid: b75eb6f554ae040cbaaf7df021b2ce06, type: 3}
   - {fileID: 114893434427387590, guid: 44a5e9d3e0fb149659199dc573e7b5a4, type: 3}
   towerName: "\u0420\u0435\u043B\u044C\u0441\u043E\u0442\u0440\u043E\u043D"
+  enTowerName: Railgun
   dimensions:
     x: 2
     y: 2

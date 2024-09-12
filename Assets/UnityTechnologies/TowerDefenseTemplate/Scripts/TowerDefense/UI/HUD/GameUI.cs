@@ -246,7 +246,7 @@ namespace TowerDefense.UI.HUD
 		/// </summary>
 		/// <param name="newState">The state to change to</param>
 		/// <exception cref="ArgumentOutOfRangeException">thrown on an invalid state</exception>
-		void SetState(State newState)
+		public void SetState(State newState)
 		{
 			if (state == newState)
 			{
@@ -506,6 +506,7 @@ namespace TowerDefense.UI.HUD
 		/// </exception>
 		public void BuyTower()
 		{
+			Debug.Log(m_CurrentTower);
 			if (!isBuilding)
 			{
 				throw new InvalidOperationException("Trying to buy towers when not in Build Mode");

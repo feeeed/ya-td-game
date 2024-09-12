@@ -1,4 +1,5 @@
-﻿using TowerDefense.Level;
+﻿using TowerDefense.Game;
+using TowerDefense.Level;
 using TowerDefense.Towers;
 using UnityEngine;
 using UnityEngine.UI;
@@ -87,8 +88,9 @@ namespace TowerDefense.UI.HUD
 				upgradeButton.gameObject.SetActive(!maxLevel);
 				if (!maxLevel)
 				{
-					upgradeDescription.text =
-						m_Tower.levels[m_Tower.currentLevel + 1].upgradeDescription.ToUpper();
+					var tower = m_Tower.levels[m_Tower.currentLevel + 1];	
+
+					upgradeDescription.text = (GameManager.CurrLang == 1 ? tower.enUpgradeDescription : tower.upgradeDescription).ToUpper();
 				}
 			}
 			LevelManager.instance.currency.currencyChanged += OnCurrencyChanged;

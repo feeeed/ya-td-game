@@ -17,30 +17,72 @@ namespace TowerDefense.Game
 		/// </summary>
 		public LevelList levelList;
 
+		internal static int CurrLang;
+		internal static System.Action<int> OnLanguageChange;
+		bool isAppFocused;
+
 		void OnApplicationFocus(bool hasFocus)
 		{
-			Silence(!hasFocus);
+			isAppFocused = hasFocus;
+			UpdateGameFocus();
 		}
 
 		void OnApplicationPause(bool isPaused)
 		{
-			Silence(isPaused);
+			isAppFocused = !isPaused;
+			UpdateGameFocus();
 		}
 
-		private void Silence(bool silence)
+
+		void Update()
 		{
-			AudioListener.pause = silence;
-			AudioListener.volume = silence ? 0 : 1;
+			UpdateGameFocus();
 		}
+
+		void UpdateGameFocus()
+		{
+			var shouldStopApp = !isAppFocused;
+
+			if (YandexGame.nowAdsShow)
+				shouldStopApp = true;
+
+			AudioListener.pause = shouldStopApp;
+			AudioListener.volume = shouldStopApp ? 0 : 1;
+		}
+
+		
 
 		/// <summary>
 		/// Set sleep timeout to never sleep
 		/// </summary>
 		protected override void Awake()
 		{
+			CurrLang = YandexGame.lang == "en" ? 1 : 0;
+			//CurrLang = 1;
+
 			Application.runInBackground = false;
 			Screen.sleepTimeout = SleepTimeout.NeverSleep;
 			base.Awake();
+		}
+		protected override void Start()
+		{
+			SetLanguage(CurrLang);
+			base.Start();
+		}
+
+		[ContextMenu("Switch Language")]
+		public void SwitchLanguage()
+		{
+			if (CurrLang == 0)
+				CurrLang = 1;
+			else
+				CurrLang = 0;
+			SetLanguage(CurrLang);
+		}
+		void SetLanguage(int lang)
+		{
+			CurrLang = lang;
+			OnLanguageChange?.Invoke(lang);
 		}
 
 		/// <summary>

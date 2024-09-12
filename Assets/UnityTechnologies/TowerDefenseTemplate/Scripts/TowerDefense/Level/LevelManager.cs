@@ -70,7 +70,7 @@ namespace TowerDefense.Level
 		/// <summary>
 		/// Number of home bases left
 		/// </summary>
-		public int numberOfHomeBasesLeft { get; protected set; }
+		public int numberOfHomeBasesLeft { get; set; }
 
 		/// <summary>
 		/// Starting number of home bases

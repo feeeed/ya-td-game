@@ -1,4 +1,5 @@
-﻿using TowerDefense.Towers;
+﻿using TowerDefense.Game;
+using TowerDefense.Towers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -72,9 +73,11 @@ namespace TowerDefense.UI.HUD
 			{
 				return;
 			}
+			var isEn = GameManager.CurrLang == 1;
+
 			TowerLevel towerLevel = tower.levels[levelOfTower];
-			DisplayText(towerName, tower.towerName);
-			DisplayText(description, towerLevel.description);
+			DisplayText(towerName, isEn ? tower.enTowerName : tower.towerName);
+			DisplayText(description, isEn ? towerLevel.enDescription : towerLevel.description);
 			DisplayText(dps, towerLevel.GetTowerDps().ToString("f2"));
 			DisplayText(health, string.Format("{0}/{1}", tower.configuration.currentHealth, towerLevel.maxHealth));
 			DisplayText(level, (levelOfTower + 1).ToString());

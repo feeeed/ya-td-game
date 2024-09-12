@@ -54,8 +54,10 @@ namespace TowerDefense.UI
 		/// Text to be displayed on popup
 		/// </summary>
 		public string levelCompleteText = "{0} COMPLETE!";
+		public string enLevelCompleteText = "{0} COMPLETE!";
 		
 		public string levelFailedText = "{0} FAILED!";
+		public string enLevelFailedText = "{0} FAILED!";
 
 		/// <summary>
 		/// Background image
@@ -159,11 +161,13 @@ namespace TowerDefense.UI
 			LevelItem level = GameManager.instance.GetLevelForCurrentScene();
 			endGameCanvas.enabled = true;
 
+			var isEn = GameManager.CurrLang == 1;
+
 			int score = CalculateFinalScore();
 			scorePanel.SetStars(score);
 			if (level != null) 
 			{
-				endGameMessageText.text = string.Format (endResultText, level.name.ToUpper ());
+				endGameMessageText.text = string.Format (endResultText, (isEn ? level.enName : level.name).ToUpper ());
 				GameManager.instance.CompleteLevel (level.id, score);
 			} 
 			else 
@@ -185,12 +189,18 @@ namespace TowerDefense.UI
 			HUD.GameUI.instance.GameOver();
 		}
 
+		public void Revive()
+		{
+			HUD.GameUI.instance.SetState(HUD.GameUI.State.Normal);
+			LevelManager.instance.homeBases[0].configuration.IncreaseHealth(3);
+		}
+
 		/// <summary>
 		/// Occurs when the level is sucessfully completed
 		/// </summary>
 		protected void Victory()
 		{
-			OpenEndGameScreen(levelCompleteText);
+			OpenEndGameScreen(GameManager.CurrLang == 1 ? enLevelCompleteText : levelCompleteText);
 			if ((victorySound != null) && (audioSource != null))
 			{
 				audioSource.PlayOneShot(victorySound);
@@ -232,7 +242,7 @@ namespace TowerDefense.UI
 		/// </summary>
 		protected void Defeat()
 		{
-			OpenEndGameScreen(levelFailedText);
+			OpenEndGameScreen(GameManager.CurrLang == 1 ? enLevelFailedText : levelFailedText);
 			if (nextLevelButton != null)
 			{
 				nextLevelButton.enabled = false;

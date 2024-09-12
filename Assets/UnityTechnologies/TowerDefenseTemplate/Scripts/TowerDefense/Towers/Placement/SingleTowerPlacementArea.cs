@@ -44,9 +44,11 @@ namespace TowerDefense.Towers.Placement
 			
 			if (tileToUse != null)
 			{
-				m_SpawnedTile = Instantiate(tileToUse);
-				m_SpawnedTile.transform.SetParent(transform);
+				m_SpawnedTile = Instantiate(tileToUse, transform);
+				//m_SpawnedTile.transform.SetParent(transform);
 				m_SpawnedTile.transform.localPosition = new Vector3(0f, 0.05f, 0f);
+				//m_SpawnedTile.transform.rotation = transform.rotation;
+				//m_SpawnedTile.transform.localScale = ;
 			}
 		}
 

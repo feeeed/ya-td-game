@@ -58,8 +58,8 @@ namespace TowerDefense.UI
 				return;
 			}
 			m_Item = item;
-			titleDisplay.text = item.name;
-			description.text = item.description;
+			titleDisplay.text = GameManager.CurrLang == 1 ? item.enName : item.name;
+			description.text = GameManager.CurrLang == 1 ? item.enDescription : item.description;
 			HasPlayedState();
 			m_MouseScroll = mouseScroll;
 		}

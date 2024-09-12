@@ -12,11 +12,13 @@ namespace TowerDefense.Towers.Data
 		/// A description of the tower for displaying on the UI
 		/// </summary>
 		public string description;
+		public string enDescription;
 
 		/// <summary>
 		/// A description of the tower for displaying on the UI
 		/// </summary>
 		public string upgradeDescription;
+		public string enUpgradeDescription;
 
 		/// <summary>
 		/// The cost to upgrade to this level

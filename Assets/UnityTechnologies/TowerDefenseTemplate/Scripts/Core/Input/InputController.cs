@@ -287,8 +287,10 @@ namespace Core.Input
 					{
 						mouseButton.isDown = false;
 						// Quick enough (with no drift) to be a tap?
-						if (!mouseButton.isDrag &&
-						    Time.realtimeSinceStartup - mouseButton.startTime < tapTime)
+						if (
+							//!mouseButton.isDrag && 
+							Time.realtimeSinceStartup - mouseButton.startTime < tapTime
+						)
 						{
 							if (tapped != null)
 							{

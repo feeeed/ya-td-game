@@ -97,6 +97,10 @@ namespace TowerDefense.Towers
 		{
 			get { return levelData.description; }
 		}
+		public string enDescription
+		{
+			get { return levelData.enDescription; }
+		}
 
 		/// <summary>
 		/// Gets the tower description
@@ -104,6 +108,10 @@ namespace TowerDefense.Towers
 		public string upgradeDescription
 		{
 			get { return levelData.upgradeDescription; }
+		}
+		public string enUpgradeDescription
+		{
+			get { return levelData.enUpgradeDescription; }
 		}
 
 		/// <summary>

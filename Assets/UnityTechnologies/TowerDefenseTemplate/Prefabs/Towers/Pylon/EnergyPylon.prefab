@@ -91,6 +91,7 @@ MonoBehaviour:
   - {fileID: 114583770607009892, guid: 63339a6445e6e417eb0d11c634f1e5f3, type: 3}
   - {fileID: 114662810418941328, guid: 88ca910b3e3aa46de83cde64fa47c470, type: 3}
   towerName: "\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440 \u044D\u043D\u0435\u0440\u0433\u0438\u0438"
+  enTowerName: Energy Generator
   dimensions:
     x: 2
     y: 2

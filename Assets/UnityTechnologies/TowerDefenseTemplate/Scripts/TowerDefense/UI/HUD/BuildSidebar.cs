@@ -1,6 +1,7 @@
 ﻿using TowerDefense.Level;
 using TowerDefense.Towers;
 using UnityEngine;
+using YG;
 
 namespace TowerDefense.UI.HUD
 {
@@ -9,10 +10,31 @@ namespace TowerDefense.UI.HUD
 	/// </summary>
 	public class BuildSidebar : MonoBehaviour
 	{
+		public int extraEnergyRewardAmount;
 		/// <summary>
 		/// The prefab spawned for each button
 		/// </summary>
 		public TowerSpawnButton towerSpawnButton;
+
+		void OnEnable()
+		{
+			YandexGame.RewardVideoEvent += OnReward;
+		}
+		void OnDisable()
+		{
+			YandexGame.RewardVideoEvent -= OnReward;
+		}
+		void OnReward(int id)
+		{
+			if (id == 1)
+			{
+				AddCurrency(extraEnergyRewardAmount);
+			}
+		}
+		public void TryGetExtraEnergyReward()
+		{
+			YandexGame.RewVideoShow(1);
+		}
 
 		/// <summary>
 		/// Initialize the tower spawn buttons

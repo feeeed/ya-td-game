@@ -22,6 +22,7 @@ namespace TowerDefense.Towers
 		/// A generalised name common to a levels
 		/// </summary>
 		public string towerName;
+		public string enTowerName;
 
 		/// <summary>
 		/// The size of the tower's footprint
@@ -94,6 +95,7 @@ namespace TowerDefense.Towers
 		/// <param name="destination">The destination position</param>
 		public virtual void Initialize(IPlacementArea targetArea, IntVector2 destination)
 		{
+			Debug.Log(this, this);
 			placementArea = targetArea;
 			gridPosition = destination;
 
@@ -109,6 +111,7 @@ namespace TowerDefense.Towers
 			{
 				LevelManager.instance.levelStateChanged += OnLevelStateChanged;
 			}
+			currentTowerLevel.SetAffectorState(true);
 		}
 
 		/// <summary>
