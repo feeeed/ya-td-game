@@ -36,22 +36,43 @@ namespace TowerDefense.Level.Editor
 			{
 				var prop = instructionsListProp.GetArrayElementAtIndex(index);
 				var data = m_Wave.spawnInstructions[index];
+				var labelWidth = EditorGUIUtility.labelWidth;
 
-				var itemWidth = rect.width / 3;
+				var itemWidth = rect.width / 3 - 15;
 				rect.height = elementHeight;
+				//rect.width = 20;
+				//rect.x += 20;
+				//EditorGUIUtility.labelWidth = 20;
+				//TempContent.text = index.ToString();
+				//GUI.Label(rect, TempContent);
+				EditorGUIUtility.labelWidth = 20;
+				TempContent.text = index.ToString();
 				rect.width = itemWidth;
-				EditorGUI.PropertyField(rect, prop.FindPropertyRelative("agentConfiguration"), GUIContent.none);
+				EditorGUI.PropertyField(rect, prop.FindPropertyRelative("agentConfiguration"), TempContent);
 				//data.agentConfiguration = (AgentConfiguration)EditorGUI.ObjectField(rect, prop.FindPropertyRelative("agentConfiguration"), typeof(AgentConfiguration), false);
 				rect.x += itemWidth;
 				EditorGUI.PropertyField(rect, prop.FindPropertyRelative("startingNode"), GUIContent.none);
 				//data.startingNode = (Nodes.Node)EditorGUI.ObjectField(rect, data.startingNode, typeof(Nodes.Node), true);
 				rect.x += itemWidth;
 
-				var labelWidth = EditorGUIUtility.labelWidth;
 				EditorGUIUtility.labelWidth = 40;
 				TempContent.text = "Delay";
 				EditorGUI.PropertyField(rect, prop.FindPropertyRelative("delayToSpawn"), TempContent);
+				rect.x += itemWidth;
 				//data.delayToSpawn = EditorGUI.FloatField(rect, "Delay", data.delayToSpawn);
+				
+				EditorGUIUtility.labelWidth = 25;
+				rect.width = 25;
+
+				if (GUI.Button(rect, "+"))
+				{
+					instructionsListProp.InsertArrayElementAtIndex(index);
+				}
+				rect.x += 25;
+				if (GUI.Button(rect, "-"))
+				{
+					instructionsListProp.DeleteArrayElementAtIndex(index);
+				}
 				EditorGUIUtility.labelWidth = labelWidth;
 			};
 			wavesList.elementHeight = elementHeight;
