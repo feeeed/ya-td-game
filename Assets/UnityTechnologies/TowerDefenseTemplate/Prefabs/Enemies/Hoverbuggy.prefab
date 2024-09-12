@@ -19770,7 +19770,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.2
-  m_Speed: 4.8
+  m_Speed: 4
   m_Acceleration: 20
   avoidancePriority: 80
   m_AngularSpeed: 360
@@ -19795,8 +19795,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   configuration:
-    maxHealth: 4
-    startingHealth: 4
+    maxHealth: 3
+    startingHealth: 3
     alignment:
       unityObjectReference: {fileID: 11400000, guid: 9dc4735bf52f547d59ebe1007e9a0e7f,
         type: 2}
