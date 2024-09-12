@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e2352be0954e359a850a9d99215c6e, type: 3}
+  m_Name: Barricade
+  m_EditorClassIdentifier: 
+  description: "\u0422\u0438\u0440 1 - \u0411\u043B\u043E\u043A\u0438\u0440\u0443\u0435\u0442
+    \u043F\u0443\u0442\u044C"
+  enDescription: Tier 1 - Blocks the path
+  upgradeDescription: 
+  enUpgradeDescription: 
+  cost: 5
+  sell: 1
+  maxHealth: 10
+  startingHealth: 10
+  icon: {fileID: 21300000, guid: 899a8845056b62d42b1e9115ccebfe0c, type: 3}
