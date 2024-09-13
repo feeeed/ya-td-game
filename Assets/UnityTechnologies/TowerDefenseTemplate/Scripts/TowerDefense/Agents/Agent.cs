@@ -273,10 +273,11 @@ namespace TowerDefense.Agents
 				else
 				{
 					// Otherwise try repath
+					m_NavMeshAgent.SetDestination(m_Destination);
 				}
 			}
 			
-			m_NavMeshAgent.SetDestination(m_Destination);
+			
 		}
 
 		/// <summary>

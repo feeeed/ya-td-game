@@ -155,7 +155,7 @@ namespace TowerDefense.Agents
 				m_AttackAffector.enabled = true;
 			}
 			state = State.Attacking;
-			m_NavMeshAgent.isStopped = true;
+			//m_NavMeshAgent.isStopped = true;
 		}
 		
 		/// <summary>
@@ -171,7 +171,7 @@ namespace TowerDefense.Agents
 
 			// Resume path once blocking has been cleared
 			m_IsAttacking = false;
-			m_NavMeshAgent.isStopped = false;
+			//m_NavMeshAgent.isStopped = false;
 			m_AttackAffector.enabled = false;
 			state = isPathBlocked ? State.OnPartialPath : State.OnCompletePath;
 			// Move the Targetter back to the agent's position

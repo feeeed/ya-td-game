@@ -22,11 +22,10 @@ namespace TowerDefense.Effects
 		{
 			ParticleSystem selectedSystem;
 			
-#if UNITY_STANDALONE
-			selectedSystem = defaultParticles;
-#else
-			selectedSystem = mobileParticles;
-#endif
+			if (!Application.isMobilePlatform)
+				selectedSystem = defaultParticles;
+			else
+				selectedSystem = mobileParticles;
 
 			defaultParticles.gameObject.SetActive(selectedSystem == defaultParticles);
 			mobileParticles.gameObject.SetActive(selectedSystem == mobileParticles);
