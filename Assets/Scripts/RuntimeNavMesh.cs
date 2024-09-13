@@ -11,7 +11,7 @@ public class RuntimeNavMesh : MonoBehaviour
     void Awake()
     {
         Main = this;
-        navMesh.UpdateNavMesh(navMesh.navMeshData);
+        navMesh.BuildNavMesh();
     }
     public void UpdateNavMesh()
     {
