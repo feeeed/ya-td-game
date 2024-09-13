@@ -11,6 +11,8 @@ namespace TowerDefense.Level
 	/// </summary>
 	public class PlayerHomeBase : DamageableBehaviour
 	{
+		public static PlayerHomeBase Main;
+
 		/// <summary>
 		/// The particle system when an attack is charging
 		/// </summary>
@@ -41,6 +43,7 @@ namespace TowerDefense.Level
 		/// </summary>
 		protected virtual void Start()
 		{
+			Main = this;
 			configuration.damaged += OnDamaged;
 		}
 

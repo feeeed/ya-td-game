@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 82184954398703546}
   - component: {fileID: 114943757665410086}
   - component: {fileID: 114571337826240766}
+  - component: {fileID: 6930689053293039656}
   m_Layer: 10
   m_Name: LaserTower
   m_TagString: Untagged
@@ -254,7 +255,7 @@ NavMeshObstacle:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1444973102034290}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 0.5, y: 1, z: 0.5}
@@ -396,6 +397,23 @@ MonoBehaviour:
   deathParticleSystemPrefab: {fileID: 198059975614214484, guid: 7a0476686964e41ac8320b7cf37868c2,
     type: 3}
   deathEffectOffset: {x: 0, y: 0, z: 0}
+--- !u!114 &6930689053293039656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1444973102034290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 1, z: 0}
+  m_Area: 1
+  m_AffectedAgents: 00000000
 --- !u!1 &1533647513546944
 GameObject:
   m_ObjectHideFlags: 0

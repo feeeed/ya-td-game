@@ -8,6 +8,7 @@ namespace TowerDefense.Towers.Placement
 	/// </summary>
 	public interface IPlacementArea
 	{
+		bool isHighGround { get; }
 		/// <summary>
 		/// Gets this object's transform
 		/// </summary>

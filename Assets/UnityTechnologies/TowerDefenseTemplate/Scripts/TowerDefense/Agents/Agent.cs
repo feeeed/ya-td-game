@@ -124,8 +124,10 @@ namespace TowerDefense.Agents
 		/// </value>
 		protected virtual bool isPathBlocked
 		{
-			get { return m_NavMeshAgent.pathStatus == NavMeshPathStatus.PathPartial; }
+			get { return pathStatus == NavMeshPathStatus.PathPartial; }
 		}
+
+		NavMeshPathStatus pathStatus;
 
 		/// <summary>
 		/// Is the Agent close enough to its destination?
@@ -248,14 +250,17 @@ namespace TowerDefense.Agents
 		/// </summary>
 		protected virtual void Update()
 		{
+			pathStatus = m_NavMeshAgent.pathStatus;
 			// Update behaviour for different states
 			PathUpdate();
 			
 			// If the path becomes invalid, repath the agent to the destination
 			bool validStalePath = m_NavMeshAgent.isOnNavMesh && m_NavMeshAgent.enabled &&
 			                      (!m_NavMeshAgent.hasPath && !m_NavMeshAgent.pathPending);
-			if (validStalePath)
+			//if (validStalePath)
 			{
+				//m_NavMeshAgent.SetDestination(PlayerHomeBase.Main.transform.position);
+				
 				// Compare against squared stopping distance on agent.
 				// We intentionally do not pre-square this value so that it can be changed at runtime dynamically
 				float squareStoppingDistance = m_NavMeshAgent.stoppingDistance * m_NavMeshAgent.stoppingDistance;
@@ -268,9 +273,10 @@ namespace TowerDefense.Agents
 				else
 				{
 					// Otherwise try repath
-					m_NavMeshAgent.SetDestination(m_Destination);
 				}
 			}
+			
+			m_NavMeshAgent.SetDestination(m_Destination);
 		}
 
 		/// <summary>
@@ -340,7 +346,8 @@ namespace TowerDefense.Agents
 					Vector3 to = pathPoints[i + 1];
 					Gizmos.DrawLine(from, to);
 				}
-				Gizmos.DrawWireSphere(m_NavMeshAgent.destination, 0.2f);
+				Gizmos.color = Color.red;
+				Gizmos.DrawSphere(m_NavMeshAgent.destination, 1f);
 			}
 		}
 #endif

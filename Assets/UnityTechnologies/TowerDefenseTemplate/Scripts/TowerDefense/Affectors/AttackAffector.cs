@@ -154,6 +154,8 @@ namespace TowerDefense.Affectors
 
 		void OnAcquiredTarget(Targetable acquiredTarget)
 		{
+			//if (acquiredTarget is Tower tower && tower.placementArea.isHighGround)
+			//	return;
 			m_TrackingEnemy = acquiredTarget;
 		}
 

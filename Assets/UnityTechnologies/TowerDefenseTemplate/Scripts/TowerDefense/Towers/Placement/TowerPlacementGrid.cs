@@ -12,6 +12,9 @@ namespace TowerDefense.Towers.Placement
 	[RequireComponent(typeof(BoxCollider))]
 	public class TowerPlacementGrid : MonoBehaviour, IPlacementArea
 	{
+		[field: SerializeField]
+		public bool isHighGround { get; set; }
+
 		/// <summary>
 		/// Prefab used to visualise the grid
 		/// </summary>
@@ -304,7 +307,7 @@ namespace TowerDefense.Towers.Placement
 		void OnDrawGizmos()
 		{
 			Color prevCol = Gizmos.color;
-			Gizmos.color = Color.cyan;
+			Gizmos.color = isHighGround ? Color.green : Color.cyan;
 
 			Matrix4x4 originalMatrix = Gizmos.matrix;
 			Gizmos.matrix = transform.localToWorldMatrix;

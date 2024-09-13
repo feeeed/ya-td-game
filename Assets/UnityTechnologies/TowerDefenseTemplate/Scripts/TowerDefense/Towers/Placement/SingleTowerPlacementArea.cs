@@ -10,6 +10,9 @@ namespace TowerDefense.Towers.Placement
 	[RequireComponent(typeof(Collider))]
 	public class SingleTowerPlacementArea : MonoBehaviour, IPlacementArea
 	{
+		[field: SerializeField]
+		public bool isHighGround { get; set; }
+
 		/// <summary>
 		/// Visualisation prefab to instantiate
 		/// </summary>
@@ -19,7 +22,7 @@ namespace TowerDefense.Towers.Placement
 		/// Visualisation prefab to instantiate on mobile platforms
 		/// </summary>
 		public PlacementTile placementTilePrefabMobile;
-		
+
 		/// <summary>
 		/// <see cref="PlacementTile"/> we've spawned on our spot
 		/// </summary>
@@ -119,7 +122,7 @@ namespace TowerDefense.Towers.Placement
 		void OnDrawGizmos()
 		{
 			Color prevCol = Gizmos.color;
-			Gizmos.color = Color.cyan;
+			Gizmos.color = isHighGround ? Color.green : Color.cyan;
 
 			Matrix4x4 originalMatrix = Gizmos.matrix;
 			Gizmos.matrix = transform.localToWorldMatrix;

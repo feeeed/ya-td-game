@@ -280,6 +280,16 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 6fe9580bd67b34580977e0aa4eab9755, type: 2}
+    - target: {fileID: 114599089433627986, guid: 174e55b3e71703b4a8e1107d3497b28b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114599089433627986, guid: 174e55b3e71703b4a8e1107d3497b28b,
+        type: 3}
+      propertyPath: towerGhostPrefab
+      value: 
+      objectReference: {fileID: 114762097156370816}
     - target: {fileID: 946130493189313411, guid: 174e55b3e71703b4a8e1107d3497b28b,
         type: 3}
       propertyPath: 'm_Materials.Array.data[0]'

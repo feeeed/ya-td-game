@@ -112,6 +112,8 @@ namespace TowerDefense.Towers
 				LevelManager.instance.levelStateChanged += OnLevelStateChanged;
 			}
 			currentTowerLevel.SetAffectorState(true);
+
+			RuntimeNavMesh.Main.UpdateNavMesh();
 		}
 
 		/// <summary>
@@ -134,6 +136,7 @@ namespace TowerDefense.Towers
 		{
 			// Invoke base kill method
 			Kill();
+			RuntimeNavMesh.Main.UpdateNavMesh();
 		}
 
 		/// <summary>
@@ -228,6 +231,7 @@ namespace TowerDefense.Towers
 			
 			placementArea.Clear(gridPosition, dimensions);
 			Destroy(gameObject);
+			RuntimeNavMesh.Main.UpdateNavMesh();
 		}
 
 		/// <summary>

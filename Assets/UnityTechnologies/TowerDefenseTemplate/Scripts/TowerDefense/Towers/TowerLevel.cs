@@ -181,6 +181,7 @@ namespace TowerDefense.Towers
 		public void Kill()
 		{
 			m_ParentTower.KillTower();
+			RuntimeNavMesh.Main.UpdateNavMesh();
 		}
 
 		public void OnBeforeSerialize()
