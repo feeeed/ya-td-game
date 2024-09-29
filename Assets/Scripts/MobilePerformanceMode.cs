@@ -18,6 +18,7 @@ public class MobilePerformanceMode : MonoBehaviour
             var urp = GraphicsSettings.defaultRenderPipeline as UniversalRenderPipelineAsset;
 
             urp.renderScale = 0.5f;
+            Camera.main.GetComponent<UniversalAdditionalCameraData>().renderShadows = false;
         }
     }
 }

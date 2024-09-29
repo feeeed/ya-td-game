@@ -60,7 +60,7 @@ namespace TowerDefense.Level
 		/// <summary>
 		/// The current state of the level
 		/// </summary>
-		public LevelState levelState { get; protected set; }
+		public LevelState levelState { get; set; }
 
 		/// <summary>
 		/// The currency controller
@@ -258,7 +258,7 @@ namespace TowerDefense.Level
 		/// Changes the state and broadcasts the event
 		/// </summary>
 		/// <param name="newState">The new state to transitioned to</param>
-		protected virtual void ChangeLevelState(LevelState newState)
+		public virtual void ChangeLevelState(LevelState newState)
 		{
 			// If the state hasn't changed then return
 			if (levelState == newState)
@@ -294,6 +294,8 @@ namespace TowerDefense.Level
 			}
 		}
 
+		internal LevelState levelStateBeforeLose;
+
 		/// <summary>
 		/// Fired when a home base is destroyed
 		/// </summary>
@@ -311,6 +313,7 @@ namespace TowerDefense.Level
 			// If there are no home bases left and the level is not over then set the level to lost
 			if ((numberOfHomeBasesLeft == 0) && !isGameOver)
 			{
+				levelStateBeforeLose = levelState;
 				ChangeLevelState(LevelState.Lose);
 			}
 		}

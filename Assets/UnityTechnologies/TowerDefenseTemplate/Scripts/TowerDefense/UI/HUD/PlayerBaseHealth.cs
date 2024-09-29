@@ -35,6 +35,7 @@ namespace TowerDefense.UI.HUD
 			{
 				Damageable baseConfig = levelManager.playerHomeBases[0].configuration;
 				baseConfig.damaged += OnBaseDamaged;
+				baseConfig.healed += OnBaseDamaged;
 				float currentHealth = baseConfig.currentHealth;
 				float noramlisedHealth = baseConfig.normalisedHealth;
 				m_MaxHealth = currentHealth / noramlisedHealth;

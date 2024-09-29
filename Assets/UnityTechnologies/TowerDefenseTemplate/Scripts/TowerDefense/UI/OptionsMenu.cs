@@ -25,7 +25,7 @@ namespace TowerDefense.UI
 
 			if (GameManager.instanceExists)
 			{
-				GameManager.instance.SetVolumes(masterVolume, sfxVolume, musicVolume, false);
+				GameManager.instance.SetVolumes(masterVolume, sfxVolume, musicVolume, true);
 			}
 		}
 

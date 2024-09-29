@@ -21,7 +21,7 @@ MonoBehaviour:
     \u0443\u0440\u043E\u043D"
   enUpgradeDescription: + range and damage
   cost: 30
-  sell: 22
+  sell: 25
   maxHealth: 5
   startingHealth: 5
   icon: {fileID: 21300000, guid: 53652022b1d444a5c9e9630488e44e13, type: 3}

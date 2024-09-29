@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d3f157ac9038aaf4d81e46692fa72a18
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 29928
+  packageName: Fast Volumetric Blob Shadows
+  packageVersion: 1.3.2
+  assetPath: Assets/FastVolumetricBlobShadows/Examples/Grey.mat
+  uploadId: 654184

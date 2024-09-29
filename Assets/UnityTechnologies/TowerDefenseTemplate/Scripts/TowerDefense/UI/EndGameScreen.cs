@@ -34,6 +34,8 @@ namespace TowerDefense.UI
 		/// The containing panel of the End Game UI
 		/// </summary>
 		public Canvas endGameCanvas;
+		public GameObject reviveButton;
+		public int reviveHealth = 4;
 
 		/// <summary>
 		/// Reference to the Text object that displays the result message
@@ -189,10 +191,16 @@ namespace TowerDefense.UI
 			HUD.GameUI.instance.GameOver();
 		}
 
+		LevelState levelStateBeforeLose;
+
 		public void Revive()
 		{
+			endGameCanvas.enabled = false;
+			GameSpeedController.Main.slider.value = 1;
 			HUD.GameUI.instance.SetState(HUD.GameUI.State.Normal);
-			LevelManager.instance.homeBases[0].configuration.IncreaseHealth(3);
+			LevelManager.instance.homeBases[0].configuration.IncreaseHealth(reviveHealth);
+			LevelManager.instance.levelState = LevelManager.instance.levelStateBeforeLose;
+			LevelManager.instance.numberOfHomeBasesLeft = 1;
 		}
 
 		/// <summary>
@@ -200,6 +208,7 @@ namespace TowerDefense.UI
 		/// </summary>
 		protected void Victory()
 		{
+			reviveButton.SetActive(false);
 			OpenEndGameScreen(GameManager.CurrLang == 1 ? enLevelCompleteText : levelCompleteText);
 			if ((victorySound != null) && (audioSource != null))
 			{
@@ -242,6 +251,7 @@ namespace TowerDefense.UI
 		/// </summary>
 		protected void Defeat()
 		{
+			reviveButton.SetActive(true);
 			OpenEndGameScreen(GameManager.CurrLang == 1 ? enLevelFailedText : levelFailedText);
 			if (nextLevelButton != null)
 			{

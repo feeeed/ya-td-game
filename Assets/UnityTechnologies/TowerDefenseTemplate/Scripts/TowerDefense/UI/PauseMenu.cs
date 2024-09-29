@@ -194,7 +194,7 @@ namespace TowerDefense.UI
 		/// </summary>
 		protected void SetPauseMenuCanvas(bool enable)
 		{
-			pauseMenuCanvas.enabled = enable;
+			pauseMenuCanvas.gameObject.SetActive(enable);
 		}
 
 		public void Pause()

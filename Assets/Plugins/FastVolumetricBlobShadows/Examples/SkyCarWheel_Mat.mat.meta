@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e0d15801bd39a3448b27a31041097905
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 29928
+  packageName: Fast Volumetric Blob Shadows
+  packageVersion: 1.3.2
+  assetPath: Assets/FastVolumetricBlobShadows/Examples/SkyCarWheel_Mat.mat
+  uploadId: 654184

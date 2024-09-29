@@ -1,12 +1,20 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameSpeedController : MonoBehaviour
 {
+    public static GameSpeedController Main;
+
+    public Slider slider;
+
     public float maxGameSpeed = 4;
 
     float gameSpeed;
 
-
+    void Awake()
+    {
+        Main = this;
+    }
     void Start()
     {
         SetGameSpeed(1);
@@ -14,13 +22,15 @@ public class GameSpeedController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Plus) || Input.GetKeyDown(KeyCode.KeypadPlus))
+        if (Input.GetKeyDown(KeyCode.Equals) || Input.GetKeyDown(KeyCode.KeypadPlus))
         {
-            SetGameSpeed(gameSpeed + 1);
+            //SetGameSpeed(gameSpeed + 1);
+            slider.value = gameSpeed + 1;  
         }
         if (Input.GetKeyDown(KeyCode.Minus) || Input.GetKeyDown(KeyCode.KeypadMinus))
         {
-            SetGameSpeed(gameSpeed - 1);
+            //SetGameSpeed(gameSpeed - 1);
+            slider.value = gameSpeed - 1; 
         }
 
         if (Time.timeScale > 0 && Time.timeScale != gameSpeed)

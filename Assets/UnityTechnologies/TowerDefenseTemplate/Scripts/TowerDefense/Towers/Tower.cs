@@ -272,7 +272,7 @@ namespace TowerDefense.Towers
 			// disable affectors
 			LevelState levelState = LevelManager.instance.levelState;
 			bool initialise = levelState == LevelState.AllEnemiesSpawned || levelState == LevelState.SpawningEnemies;
-			currentTowerLevel.SetAffectorState(initialise);
+			//currentTowerLevel.SetAffectorState(initialise);
 		}
 
 		/// <summary>
@@ -300,7 +300,7 @@ namespace TowerDefense.Towers
 		protected virtual void OnLevelStateChanged(LevelState previous, LevelState current)
 		{
 			bool initialise = current == LevelState.AllEnemiesSpawned || current == LevelState.SpawningEnemies;
-			currentTowerLevel.SetAffectorState(initialise);
+			//currentTowerLevel.SetAffectorState(initialise);
 		}
 	}
 }

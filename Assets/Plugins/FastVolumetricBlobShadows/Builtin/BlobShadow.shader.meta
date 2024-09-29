@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 71fff4cdb6878824fa43b950d8d6b078
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 29928
+  packageName: Fast Volumetric Blob Shadows
+  packageVersion: 1.3.2
+  assetPath: Assets/FastVolumetricBlobShadows/Builtin/BlobShadow.shader
+  uploadId: 654184

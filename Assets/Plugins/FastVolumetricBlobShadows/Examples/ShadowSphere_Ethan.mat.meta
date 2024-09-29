@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 04add6e549590ec4d84780ed36273f14
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 29928
+  packageName: Fast Volumetric Blob Shadows
+  packageVersion: 1.3.2
+  assetPath: Assets/FastVolumetricBlobShadows/Examples/ShadowSphere_Ethan.mat
+  uploadId: 654184

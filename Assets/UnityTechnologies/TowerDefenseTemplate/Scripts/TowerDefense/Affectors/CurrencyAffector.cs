@@ -43,6 +43,7 @@ namespace TowerDefense.Affectors
 		/// </summary>
 		protected virtual void Update()
 		{
+			if (LevelManager.instance.levelState != LevelState.Building)
 			currencyGainer.Tick(Time.deltaTime);
 		}
 

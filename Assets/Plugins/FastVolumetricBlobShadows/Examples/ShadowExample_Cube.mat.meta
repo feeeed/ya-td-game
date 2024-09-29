@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4f812dcffae877c4d918a27b84b9ed73
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 29928
+  packageName: Fast Volumetric Blob Shadows
+  packageVersion: 1.3.2
+  assetPath: Assets/FastVolumetricBlobShadows/Examples/ShadowExample_Cube.mat
+  uploadId: 654184

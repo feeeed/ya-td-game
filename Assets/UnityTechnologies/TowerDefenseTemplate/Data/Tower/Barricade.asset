@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e2352be0954e359a850a9d99215c6e, type: 3}
   m_Name: Barricade
   m_EditorClassIdentifier: 
-  description: "\u0422\u0438\u0440 1 - \u0411\u043B\u043E\u043A\u0438\u0440\u0443\u0435\u0442
-    \u043F\u0443\u0442\u044C"
-  enDescription: Tier 1 - Blocks the path
-  upgradeDescription: 
+  description: "\u0411\u043B\u043E\u043A\u0438\u0440\u0443\u0435\u0442 \u043F\u0443\u0442\u044C"
+  enDescription: Blocks the path
+  upgradeDescription: "\u0423\u0441\u0438\u043B\u0435\u043D\u043D\u0430\u044F \u0431\u0440\u043E\u043D\u044F"
   enUpgradeDescription: 
-  cost: 5
+  cost: 4
   sell: 1
   maxHealth: 10
   startingHealth: 10

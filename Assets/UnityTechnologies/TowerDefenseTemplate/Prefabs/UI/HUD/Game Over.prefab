@@ -1012,6 +1012,8 @@ MonoBehaviour:
   defeatSound: {fileID: 8300000, guid: 01e0e2d3367124c909e8666c4241940c, type: 3}
   audioSource: {fileID: 82438393256394770}
   endGameCanvas: {fileID: 223019906111977400}
+  reviveButton: {fileID: 2441619899770403679}
+  reviveHealth: 4
   endGameMessageText: {fileID: 114444767888515022}
   scorePanel: {fileID: 114753625047177706}
   menuSceneName: MainMenu
@@ -1942,8 +1944,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   texts:
-  - "\u041F\u041E\u041B\u0423\u0427\u0418\u0422\u042C +3 \u0416\u0418\u0417\u041D\u0418"
-  - GET +3 LIVES
+  - "\u0412\u041E\u0417\u0420\u041E\u0414\u0418\u0422\u042C\u0421\u042F \u0421 4
+    \u0416\u0418\u0417\u041D\u042F\u041C\u0418"
+  - REVIVE WITH 4 LIVES
 --- !u!114 &5442303772372336846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1966,7 +1969,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: acf4716a8fa254a2589ba008c867a3bc, type: 3}
-    m_FontSize: 24
+    m_FontSize: 22
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
@@ -1977,7 +1980,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041F\u041E\u041B\u0423\u0427\u0418\u0422\u042C +3 \u0416\u0418\u0417\u041D\u0418"
+  m_Text: "\u0412\u041E\u0417\u0420\u041E\u0414\u0418\u0422\u042C\u0421\u042F \u0421
+    4 \u0416\u0418\u0417\u041D\u042F\u041C\u0418"
 --- !u!1 &2221694852557713094
 GameObject:
   m_ObjectHideFlags: 0
@@ -2065,6 +2069,7 @@ GameObject:
   - component: {fileID: 6806703552256262211}
   - component: {fileID: 8231960117740329891}
   - component: {fileID: 6027171301712240562}
+  - component: {fileID: 7240726913411632762}
   m_Layer: 5
   m_Name: Revive
   m_TagString: Untagged
@@ -2175,6 +2180,34 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7240726913411632762}
+        m_TargetAssemblyTypeName: RewardAd, Assembly-CSharp
+        m_MethodName: TryGetReward
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &7240726913411632762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2441619899770403679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce81515051061bd4cbe368a262f7c77d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewardId: 2
+  onRewardEvent:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 114361015752108500}
         m_TargetAssemblyTypeName: TowerDefense.UI.EndGameScreen, Assembly-CSharp
         m_MethodName: Revive
@@ -2188,7 +2221,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 82438393256394770}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:

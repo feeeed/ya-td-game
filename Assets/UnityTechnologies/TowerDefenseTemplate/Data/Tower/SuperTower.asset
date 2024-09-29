@@ -18,8 +18,8 @@ MonoBehaviour:
   enDescription: <b>Self-destructs</b> after launching a missile barrage
   upgradeDescription: 
   enUpgradeDescription: 
-  cost: 20
-  sell: -1
-  maxHealth: 20
-  startingHealth: 20
+  cost: 50
+  sell: 0
+  maxHealth: 100
+  startingHealth: 100
   icon: {fileID: 21300000, guid: d6c11b9a43dfb413b86a3ff8908088db, type: 3}

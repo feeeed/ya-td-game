@@ -50,7 +50,7 @@ namespace TowerDefense.UI
 				radiusVisualizer.transform.localScale = Vector3.one * provider.effectRadius * 2.0f;
 				radiusVisualizer.transform.localRotation = new Quaternion {eulerAngles = localEuler};
 
-				var visualizerRenderer = radiusVisualizer.GetComponent<Renderer>();
+				var visualizerRenderer = radiusVisualizer.transform.GetChild(0).GetComponent<Renderer>();
 				if (visualizerRenderer != null)
 				{
 					visualizerRenderer.material.color = provider.effectColor;
